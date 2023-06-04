@@ -78,7 +78,7 @@ function setFileName(data) {
 
 async function putObject(fileName, sourceFilePath, remotePath) {
   const command = new PutObjectCommand({
-    Bucket: process.env.BUCKET_NAME,
+    Bucket: process.env.BUCKET_NAME ?? 'hsnd-binance-logs',
     Key: remotePath + fileName,
     Body: fs.readFileSync(sourceFilePath, 'utf-8'),
   });
