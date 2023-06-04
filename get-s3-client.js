@@ -15,7 +15,7 @@ function getClient() {
     client = new S3Client({
       region: process.env.REGION ?? 'eu-north-1',
       credentials: {
-        secretAccessKey: process.env.ACCESS_SECRET,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
       },
     });
